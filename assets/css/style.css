@@ -1,6 +1,7 @@
 /* Common rules */
 :root {
     --secondary: #EAEAEA;
+    --elements: #B1B1B1;
 }
 
 img {
@@ -33,27 +34,49 @@ main {
 
 /* utilities */
 .topPage {
-    height: 50px;
+    height: 70px;
     background-color: var(--secondary);
     display: flex;
+    justify-content: space-between;
     padding: 0.5rem;
 }
 
+.name {
+    font-weight: 700;
+}
 
+.infoChat {
+    font-size: 0.8rem;
+}
+
+.profile{
+    clip-path: circle(47%);
+}
+
+.fullInfo {
+    height: 100%;
+    padding-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 /* Left page */
 .leftPage {
     width: 40%;
+    border-right: 0.8px solid var(--elements);
 }
 
-
-.personalProfile{
-
+.icons {
+    color: var(--elements);
+    display: flex;
+    align-items: center;
 }
 
-
-
-
+.icons > i {
+    margin: 0.3rem;
+    font-size: 1.1rem;
+}
 
 
 
