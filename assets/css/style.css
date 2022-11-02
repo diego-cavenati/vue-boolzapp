@@ -1,0 +1,63 @@
+/* Common rules */
+:root {
+    --secondary: #EAEAEA;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#app {
+    display: flex;
+    flex-wrap: wrap;
+    height: 90vh;
+    width: 90%;
+    background-color: white;
+}
+
+.personalInfo, .receiverInfo {
+    display: flex;
+}
+
+/* utilities */
+.topPage {
+    height: 50px;
+    background-color: var(--secondary);
+    display: flex;
+    padding: 0.5rem;
+}
+
+
+
+/* Left page */
+.leftPage {
+    width: 40%;
+}
+
+
+.personalProfile{
+
+}
+
+
+
+
+
+
+
+/* Right page  */
+.rightPage {
+    width: 60%;
+}
