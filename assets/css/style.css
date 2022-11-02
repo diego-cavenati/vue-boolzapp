@@ -2,6 +2,7 @@
 :root {
     --secondary: #EAEAEA;
     --elements: #B1B1B1;
+    --allert: #8EDAFC;
 }
 
 img {
@@ -28,6 +29,11 @@ main {
     background-color: white;
 }
 
+a {
+    display: block;
+    color: var(--elements);
+}
+
 .personalInfo, .receiverInfo {
     display: flex;
 }
@@ -47,6 +53,7 @@ main {
 
 .infoChat {
     font-size: 0.8rem;
+    color: var(--elements);
 }
 
 .profile{
@@ -78,7 +85,38 @@ main {
     font-size: 1.1rem;
 }
 
+.allertNotifications {
+    display: flex;
+    background-color: var(--allert);
+    height: 70px;
+    padding: 0.7rem;
+}
 
+.bell {
+    clip-path: circle(47%);
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bell > i {
+    color: var(--allert);
+    font-size: 1.2rem;
+}
+
+.actionNotification {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 0.7rem;
+}
+
+.actionNotification > a {
+font-size: 0.8rem;
+}
 
 /* Right page  */
 .rightPage {
