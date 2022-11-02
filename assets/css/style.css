@@ -1,6 +1,7 @@
 /* Common rules */
 :root {
     --secondary: #EAEAEA;
+    --tertiary: #fafafa;
     --elements: #B1B1B1;
     --allert: #8EDAFC;
 }
@@ -85,6 +86,7 @@ a {
     font-size: 1.1rem;
 }
 
+/* Notification */
 .allertNotifications {
     display: flex;
     background-color: var(--allert);
@@ -118,7 +120,71 @@ a {
 font-size: 0.8rem;
 }
 
+/* Search contacts */
+.search {
+    background-color: var(--tertiary);
+    padding: 0.7rem;
+}
+
+.buttonSearch {
+    display: flex;
+    border: 1px solid var(--elements);
+}
+
+.buttonSearch > input{
+    width: 85%;
+    border: none;
+    font-size: 0.7rem;
+    padding: 0.6rem;
+    font-weight: 600;
+}
+
+.lens {
+    width: 15%;
+    border-right: 1px solid var(--elements);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Right page  */
 .rightPage {
     width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
+
+/* chat */
+.messages {
+    background-image: url('../img/mine.jpg');
+    width: 100%;
+    height: 100%;
+}
+
+/* write message */
+.writeMessage {
+    display: flex;
+    padding: 0.7rem;
+    background-color: var(--secondary);
+    height: 70px;
+}
+
+.writeMessage > input {
+    width: 80%;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 0.7rem;
+    padding: 0.6rem;
+    font-weight: 600;
+}
+
+.emoji, .microphone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    color: var(--elements);
+    font-size: 1.2rem;
+}
+
