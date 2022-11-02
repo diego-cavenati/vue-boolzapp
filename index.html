@@ -62,7 +62,20 @@
                         </div>
                     </div>
 
-                    <div class="contacts"></div>
+                    <div class="contacts">
+                        <div class="chat" v-for="(contact, i) in contacts" @click="setActiveIndex(i)">
+                            <div class="user">
+                                <img class="profile" :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="Personal account image">
+                                <div class="fullInfo">
+                                    <!-- {{ contacts[activeIndex].name }} -->
+                                    <span class="name">{{ contact.name }}</span>
+                                    <span class="infoChat">{{ contact.messages[contact.messages.length - 1].message }}</span>
+                                </div>
+                            </div>
+                            <span class="timeChat infoChat">{{ contact.messages[contact.messages.length - 1].date.substring(10,16) }}</span>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="rightPage">
@@ -84,27 +97,26 @@
                         </div> 
 
                     </div>
-
                     
 
-                        <div class="messages">
-                            <div class="messageChat">
+                    <div class="messages">
+                        <div class="messageChat">
 
-                            </div>
+                        </div>
+                    </div>
+
+                    <div class="writeMessage">
+
+                        <div class="emoji">
+                            <i class="fa-regular fa-face-smile"></i>
                         </div>
 
-                        <div class="writeMessage">
+                        <input type="text" placeholder="Scrivi un messaggio">
 
-                            <div class="emoji">
-                                <i class="fa-regular fa-face-smile"></i>
-                            </div>
-
-                            <input type="text" placeholder="Scrivi un messaggio">
-
-                            <div class="microphone">
-                                <i class="fa-solid fa-microphone"></i>
-                            </div>
+                        <div class="microphone">
+                            <i class="fa-solid fa-microphone"></i>
                         </div>
+                    </div>
                    
 
                 </div>
