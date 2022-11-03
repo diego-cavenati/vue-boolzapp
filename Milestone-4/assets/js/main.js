@@ -10,6 +10,8 @@ createApp({
                 status: 'received'
             },
             newMessage : '',
+            searchChat : '',
+            userSearch : '',
             contacts: [
                 {
                     name: 'Michele',
@@ -194,8 +196,11 @@ createApp({
                 this.contacts[this.activeIndex].messages.push(this.userMessage)
             }, 1000)
 
-
         },
+        searchContact(){
+            // this.userSearch
+            // this.contacts.name.filter(word => this.userSearch && )
+        }
 
     },
     

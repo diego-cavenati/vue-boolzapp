@@ -53,10 +53,10 @@
 
                     <div class="search">
                         <div class="buttonSearch">
-                            <div class="lens">
+                            <div class="lens" >
                             <i class="fa-solid fa-magnifying-glass icons"></i>
                             </div>
-                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" v-model="userSearch"  placeholder="Cerca o inizia una nuova chat" @keyup.enter="searchContact">
                         </div>
                     </div>
 

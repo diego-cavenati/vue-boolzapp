@@ -79,7 +79,10 @@ a {
 /* Left page */
 .leftPage {
     width: 40%;
-    border-right: 0.8px solid var(--elements);
+    border-right: 0.2px solid var(--elements);
+    display: flex;
+    flex-direction: column;
+
 }
 
 .icons {
@@ -157,7 +160,9 @@ font-size: 0.8rem;
 
 /* Chat */
 .contacts {
-    overflow: auto;
+    overflow-y: scroll;
+    flex-grow: 1;
+    height: 100%;
 }
 
 .chat {
@@ -179,6 +184,7 @@ font-size: 0.8rem;
 /* chat */
 .messages {
     background-image: url('../img/mine.jpg');
+    overflow: auto;
     display: flex;
     flex-direction: column;
     width: 100%;
