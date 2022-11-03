@@ -1,0 +1,208 @@
+/* Common rules */
+:root {
+    --secondary: #EAEAEA;
+    --tertiary: #fafafa;
+    --elements: #B1B1B1;
+    --allert: #8EDAFC;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#app {
+    display: flex;
+    flex-wrap: wrap;
+    height: 90vh;
+    width: 90%;
+    background-color: white;
+}
+
+a {
+    display: block;
+    color: var(--elements);
+}
+
+.personalInfo, .receiverInfo {
+    display: flex;
+}
+
+/* utilities */
+.topPage {
+    height: 70px;
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.name {
+    font-weight: 700;
+}
+
+.infoChat {
+    font-size: 0.8rem;
+    color: var(--elements);
+}
+
+.profile{
+    clip-path: circle(47%);
+}
+
+.fullInfo {
+    height: 100%;
+    padding-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Left page */
+.leftPage {
+    width: 40%;
+    border-right: 0.8px solid var(--elements);
+}
+
+.icons {
+    color: var(--elements);
+    display: flex;
+    align-items: center;
+}
+
+.icons > i {
+    margin: 0.3rem;
+    font-size: 1.1rem;
+}
+
+/* Notification */
+.allertNotifications {
+    display: flex;
+    background-color: var(--allert);
+    height: 70px;
+    padding: 0.7rem;
+}
+
+.bell {
+    clip-path: circle(47%);
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bell > i {
+    color: var(--allert);
+    font-size: 1.2rem;
+}
+
+.actionNotification {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 0.7rem;
+}
+
+.actionNotification > a {
+font-size: 0.8rem;
+}
+
+/* Search contacts */
+.search {
+    background-color: var(--tertiary);
+    padding: 0.7rem;
+}
+
+.buttonSearch {
+    display: flex;
+    border: 1px solid var(--secondary);
+}
+
+.buttonSearch > input{
+    width: 85%;
+    border: none;
+    font-size: 0.7rem;
+    padding: 0.6rem;
+    font-weight: 600;
+}
+
+.lens {
+    width: 15%;
+    border-right: 1px solid var(--secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+/* Chat */
+.contacts {
+    overflow: auto;
+}
+
+.chat {
+    height: 70px;
+    display: flex;
+    padding: 0.7rem;
+    border-top: 1px solid var(--secondary);
+    justify-content: space-between;
+}
+
+/* Right page  */
+.rightPage {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* chat */
+.messages {
+    background-image: url('../img/mine.jpg');
+    width: 100%;
+    height: 100%;
+}
+
+.user {
+    display: flex;
+}
+
+/* write message */
+.writeMessage {
+    display: flex;
+    padding: 0.7rem;
+    background-color: var(--secondary);
+    height: 70px;
+}
+
+.writeMessage > input {
+    width: 80%;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 0.7rem;
+    padding: 0.6rem;
+    font-weight: 600;
+}
+
+.emoji, .microphone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    color: var(--elements);
+    font-size: 1.2rem;
+}
+

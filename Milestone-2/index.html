@@ -1,0 +1,148 @@
+<!doctype html> 
+<html lang='it'> 
+    <head>
+        <meta charset='utf-8'> 
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <meta name='author' content='Diego Cavenati'>
+        <title>Boolzap</title>
+        <!-- Font -->
+
+        <!-- Font awesome -->
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'>
+        <!-- Bootstrap CSS -->
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT' crossorigin='anonymous'>
+        <!-- Personal CSS -->
+        <link rel='stylesheet' href='./assets/css/style.css'>
+    </head>
+    <body>
+
+        <!-- Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse -->
+
+        <main>
+            <div id="app">
+
+                <div class="leftPage">
+
+                    <div class="personalProfile topPage">
+
+                        <div class="personalInfo">
+                            <img class="profile" src="./assets/img/avatar_io.jpg" alt="Personal account image">
+                            <div class="fullInfo">
+                                <span class="name">Sofia</span>
+                            </div>
+                        </div>
+
+                        <div class="icons">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="allertNotifications">
+
+                        <div class="bell">
+                            <i class="fa-sharp fa-solid fa-bell-slash"></i>
+                        </div>
+
+                        <div class="actionNotification">
+                            <span>Ricevi notifiche di nuovi messaggi</span>
+                            <a href="#">Attiva notifiche desktop</a>
+                        </div>
+
+                    </div>
+
+                    <div class="search">
+                        <div class="buttonSearch">
+                            <div class="lens">
+                            <i class="fa-solid fa-magnifying-glass icons"></i>
+                            </div>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </div>
+
+                    <div class="contacts">
+                        <div class="chat" v-for="(contact, i) in contacts" @click="setActiveIndex(i)">
+                            <div class="user">
+                                <img class="profile" :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="Personal account image">
+                                <div class="fullInfo">
+                                    <!-- {{ contacts[activeIndex].name }} -->
+                                    <span class="name">{{ contact.name }}</span>
+                                    <span class="infoChat">{{ contact.messages[contact.messages.length - 1].message }}</span>
+                                </div>
+                            </div>
+                            <span class="timeChat infoChat">{{ contact.messages[contact.messages.length - 1].date.substring(10,16) }}</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="rightPage">
+
+                    <div class="receiverProfile topPage">
+
+                        <div class="receiverInfo">
+                            <img class="profile" src="./assets/img/avatar_1.jpg" alt="Personal account image">
+                            <div class="fullInfo">
+                                <span class="name">Michele</span>
+                                <span class="infoChat">Ultimo accesso oggi alle 12:00</span>
+                            </div>
+                        </div>
+
+                        <div class="icons">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div> 
+
+                    </div>
+                    
+
+                    <div class="messages">
+                        <div class="messageChat">
+
+                        </div>
+                    </div>
+
+                    <div class="writeMessage">
+
+                        <div class="emoji">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+
+                        <input type="text" placeholder="Scrivi un messaggio">
+
+                        <div class="microphone">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                    </div>
+                   
+
+                </div>
+
+            </div>
+        </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Vue script -->
+        <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+        <!-- Personal script -->
+        <script src='./assets/js/main.js'></script>
+        <!-- Bootstrap script -->
+        <script src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js' integrity='sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3' crossorigin='anonymous'></script>
+        <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8' crossorigin='anonymous'></script>
+    </body>
+</html>
