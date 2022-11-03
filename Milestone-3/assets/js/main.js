@@ -4,6 +4,12 @@ createApp({
     data(){
         return{
             activeIndex : 0,
+            userMessage : {
+                date: '',
+                message: 'Ok!',
+                status: 'received'
+            },
+            newMessage : '',
             contacts: [
                 {
                     name: 'Michele',
@@ -24,7 +30,7 @@ createApp({
                             date: '10/01/2020 16:15:22',
                             message: 'Tutto fatto!',
                             status: 'received'
-                        }
+                        },
                     ],
                 },
                 {
@@ -173,5 +179,24 @@ createApp({
         setActiveIndex(i){
             this.activeIndex = i;
         },
-    }
+        addMessage(){
+
+            this.contacts[this.activeIndex].messages.push(                 
+                {
+                    date: '',
+                    message: this.newMessage.trim(),
+                    status: 'sent',
+                },)
+
+            this.newMessage = '';
+
+            setTimeout(()=>{
+                this.contacts[this.activeIndex].messages.push(this.userMessage)
+            }, 1000)
+
+
+        },
+
+    },
+    
 }).mount("#app");
