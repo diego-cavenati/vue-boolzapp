@@ -101,10 +101,9 @@
                     
 
                     <div class="messages">
-                        <div vfor="message in contact[activeIndex].messages">
+                        <div :class="message.status === `sent` ? `sent` : `received`" v-for="message in contacts[activeIndex].messages">
                             <span>
-                                {{ message }}
-                                {{ contacts[activeIndex].messages}} 
+                                {{  message.message }}
                             </span>
                         </div>
                     </div>
