@@ -208,16 +208,45 @@ font-size: 0.8rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 }
 
 .received {
     background-color: white;
-
 }
 
 .sent {
     background-color: var(--sent);
     align-self: flex-end;
+}
+
+.fa-caret-down {
+    align-self: flex-end;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.deleteMessage {
+    padding: 0.5rem;
+    background-color: white;
+    width: 80%;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    z-index: 999;
+    border-radius: 0.5rem;
+}
+
+.deleteMessage > ul {
+    margin: 0;
+    padding: 0;
+}
+
+.deleteMessage > ul > li {
+    list-style: none;
+    font-size: 0.9rem;
+    padding: 0.4rem;
 }
 
 /* write message */

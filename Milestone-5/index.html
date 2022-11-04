@@ -120,12 +120,22 @@
                     
 
                     <div class="messages">
-                        <div :class="message.status === `sent` ? `sent` : `received`" v-for="message in contacts[activeIndex].messages">
+                        <div :class="message.status === `sent` ? `sent` : `received`" v-for="(message, index) in contacts[activeIndex].messages">
+                            <i class="fa-solid fa-caret-down" @click="changeDisplay"></i>
+                            <div class="deleteMessage" v-show="clickInfo">
+                                <ul>
+                                    <li @click="deleteMessage">
+                                        Elimina messaggio
+                                    </li>
+                                    <li>
+                                        Info chat
+                                    </li>
+                                </ul>
+                            </div>
                             <span>
                                 {{ message.message }}
                             </span>
                             <span class="infoChat timeMessage">
-                                
                                 {{message.date.substring(11,16)}}
                             </span>
                         </div>
