@@ -1,20 +1,14 @@
-import { DateTime } from 'luxon';
-
 const { createApp } = Vue;
 
 createApp({
     data(){
         return{
             activeIndex : 0,
-            userMessage : {
-                date: '',
-                message: 'Ok!',
-                status: 'received'
-            },
             newMessage : '',
             searchChat : '',
             userSearch : '',
             chatFilter : '',
+            time : null,
             contacts: [
                 {
                     name: 'Michele',
@@ -186,9 +180,16 @@ createApp({
         },
         addMessage(){
 
+            function mounted() { 
+                const dt = luxon.DateTime;
+                return dt.now().toISO()
+            }
+
+            this.time = mounted();
+
             this.contacts[this.activeIndex].messages.push(                 
                 {
-                    date: "",
+                    date: this.time,
                     message: this.newMessage.trim(),
                     status: 'sent',
                 },)
@@ -196,13 +197,27 @@ createApp({
             this.newMessage = '';
 
             setTimeout(()=>{
-                this.contacts[this.activeIndex].messages.push(this.userMessage)
+                this.contacts[this.activeIndex].messages.push(
+                    {
+                        date: this.time,
+                        message: 'Ok!',
+                        status: 'received'
+                    },
+                    )
             }, 1000)
 
         },
         searchContact(){
             this.chatFilter = this.contacts.filter( (contact) => contact.name.includes(this.userSearch));
-        }
+        },
+        timeMessage(){
+            const dt = luxon.DateTime;
+            console.log(dt);
+        },
+        // mounted() {
+        //     const dt = luxon.DateTime;
+        //     console.log(dt.now())
+        // }
 
     },
     
@@ -212,3 +227,5 @@ createApp({
 
 
 // dt : DateTime.now().toLocaleString(DateTime.TIME_24_SIMPLE),
+
+
