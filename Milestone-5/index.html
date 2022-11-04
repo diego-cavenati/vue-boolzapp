@@ -67,12 +67,11 @@
                                 <div class="user">
                                     <img class="profile" :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="Personal account image">
                                     <div class="fullInfo">
-                                        <!-- {{ contacts[activeIndex].name }} -->
                                         <span class="name">{{ contact.name }}</span>
                                         <span class="infoChat">{{ contact.messages[contact.messages.length - 1].message }}</span>
                                     </div>
                                 </div>
-                                <span class="timeChat infoChat">{{ contact.messages[contact.messages.length - 1].date.substring(10,16) }}</span>
+                                <span class="timeChat infoChat">{{ contact.messages[contact.messages.length - 1].date.substring(11,16) }}</span>
                             </div>
                         </div>
 
@@ -83,7 +82,6 @@
                                 <div class="user">
                                     <img class="profile" :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="Personal account image">
                                     <div class="fullInfo">
-                                        <!-- {{ contacts[activeIndex].name }} -->
                                         <span class="name">{{ contact.name }}</span>
                                         <span class="infoChat">{{ contact.messages[contact.messages.length - 1].message }}</span>
                                     </div>
@@ -107,7 +105,7 @@
                             <div class="fullInfo">
                                 <span class="name">{{ contacts[activeIndex].name }}</span>
                                 <span class="infoChat">
-                                    Ultimo accesso oggi alle 12:00
+                                    Ultimo accesso oggi alle {{ contacts[activeIndex].messages[contacts[activeIndex].messages.length - 1].date.substring(11,16) }}
                                 </span>
                             </div>
                         </div>
