@@ -1,3 +1,5 @@
+import { DateTime } from 'luxon';
+
 const { createApp } = Vue;
 
 createApp({
@@ -186,7 +188,7 @@ createApp({
 
             this.contacts[this.activeIndex].messages.push(                 
                 {
-                    date: '',
+                    date: "",
                     message: this.newMessage.trim(),
                     status: 'sent',
                 },)
@@ -207,3 +209,6 @@ createApp({
 }).mount("#app");
 
 
+
+
+// dt : DateTime.now().toLocaleString(DateTime.TIME_24_SIMPLE),
