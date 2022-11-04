@@ -61,17 +61,38 @@
                     </div>
 
                     <div class="contacts">
-                        <div class="chat" :class="i === activeIndex ? `active` : ``" v-for="(contact, i) in contacts" @click="setActiveIndex(i)">
-                            <div class="user">
-                                <img class="profile" :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="Personal account image">
-                                <div class="fullInfo">
-                                    <!-- {{ contacts[activeIndex].name }} -->
-                                    <span class="name">{{ contact.name }}</span>
-                                    <span class="infoChat">{{ contact.messages[contact.messages.length - 1].message }}</span>
+
+                        <div v-if="userSearch == ''">
+                            <div class="chat" :class="i === activeIndex ? `active` : ``" v-for="(contact, i) in contacts" @click="setActiveIndex(i)">
+                                <div class="user">
+                                    <img class="profile" :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="Personal account image">
+                                    <div class="fullInfo">
+                                        <!-- {{ contacts[activeIndex].name }} -->
+                                        <span class="name">{{ contact.name }}</span>
+                                        <span class="infoChat">{{ contact.messages[contact.messages.length - 1].message }}</span>
+                                    </div>
                                 </div>
+                                <span class="timeChat infoChat">{{ contact.messages[contact.messages.length - 1].date.substring(10,16) }}</span>
                             </div>
-                            <span class="timeChat infoChat">{{ contact.messages[contact.messages.length - 1].date.substring(10,16) }}</span>
                         </div>
+
+                        <div v-else>
+
+                            <div class="chat" :class="i === activeIndex ? `active` : ``" v-for="(contact, i) in chatFilter" @click="setActiveIndex(i)">
+
+                                <div class="user">
+                                    <img class="profile" :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="Personal account image">
+                                    <div class="fullInfo">
+                                        <!-- {{ contacts[activeIndex].name }} -->
+                                        <span class="name">{{ contact.name }}</span>
+                                        <span class="infoChat">{{ contact.messages[contact.messages.length - 1].message }}</span>
+                                    </div>
+                                </div>
+                                <span class="timeChat infoChat">{{ contact.messages[contact.messages.length - 1].date.substring(10,16) }}</span>
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </div>
@@ -103,7 +124,7 @@
                     <div class="messages">
                         <div :class="message.status === `sent` ? `sent` : `received`" v-for="message in contacts[activeIndex].messages">
                             <span>
-                                {{  message.message }}
+                                {{ message.message }}
                             </span>
                             <span class="infoChat timeMessage">
                                 {{message.date.substring(10,16)}}

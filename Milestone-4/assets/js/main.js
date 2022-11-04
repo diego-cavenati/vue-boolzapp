@@ -12,6 +12,7 @@ createApp({
             newMessage : '',
             searchChat : '',
             userSearch : '',
+            chatFilter : '',
             contacts: [
                 {
                     name: 'Michele',
@@ -198,10 +199,11 @@ createApp({
 
         },
         searchContact(){
-            // this.userSearch
-            // this.contacts.name.filter(word => this.userSearch && )
+            this.chatFilter = this.contacts.filter( (contact) => contact.name.includes(this.userSearch));
         }
 
     },
     
 }).mount("#app");
+
+
