@@ -4,11 +4,12 @@ createApp({
     data(){
         return{
             activeIndex : 0,
+            activeMessageIndex : null,
             newMessage : '',
             searchChat : '',
             userSearch : '',
             chatFilter : '',
-            time : null,
+            clickInfo : false,
             contacts: [
                 {
                     name: 'Michele',
@@ -210,15 +211,19 @@ createApp({
         searchContact(){
             this.chatFilter = this.contacts.filter( (contact) => contact.name.includes(this.userSearch));
         },
-        timeMessage(){
-            const dt = luxon.DateTime;
-            console.log(dt);
+        deleteMessage(){
+            
         },
-        // mounted() {
-        //     const dt = luxon.DateTime;
-        //     console.log(dt.now())
-        // }
+        changeDisplay(index){
 
+            this.activeMessageIndex = index;
+
+            if (this.clickInfo) {
+                this.clickInfo = false;
+            }
+            this.clickInfo = true;
+
+        }
     },
     
 }).mount("#app");
